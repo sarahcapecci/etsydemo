@@ -1,0 +1,18 @@
+<h1>Ordered Equipments</h1>
+<div class="row">
+  <% @orders.each do |order| %>
+    <div class="col-md-3">
+      <div class="thumbnail">
+      <%= link_to image_tag(order.listing.image.url) %>
+        <div class="caption">
+          <h3><%= order.listing.name %></h3> 
+          <p><%= order.listing.season %></p>
+          <p><%= number_to_currency(order.listing.price) %></p>
+          <p>Ordered by: <%= order.buyer.name %></p>
+          <p>Orderded on <%= order.created_at.strftime("%B %-d, %Y") %></p> 
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
