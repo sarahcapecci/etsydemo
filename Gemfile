@@ -39,6 +39,10 @@ gem "figaro"
 # User Accounts with Devise
 gem 'devise'
 
+#Stripe
+
+gem 'stripe'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
