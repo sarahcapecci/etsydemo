@@ -26,8 +26,21 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.buyer_id = current_user.id
     @listing = Listing.find(params[:listing_id])
+    @seller = @listing.user
+
+    @order.listing_id = @listing.id
+    @order.seller_id = @seller.id
     @order.save
-    respond_with(@order)
+
+    respond_to do |format|
+          if @order.save
+            format.html { redirect_to root_url, notice: 'Order was successfully created.' }
+            format.json { render action: 'show', status: :created, location: @order }
+          else
+            format.html { render action: 'new' }
+            format.json { render json: @order.errors, status: :unprocessable_entity }
+          end
+    end
   end
 
   def update
