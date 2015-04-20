@@ -16,5 +16,5 @@
 	</div>
 </div>
 <% if current_user == @listing.user %>
-	<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %>
+	<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link", data: {no_turbolink: true} %>
 <% end %>
