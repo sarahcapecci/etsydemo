@@ -16,6 +16,7 @@
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
           <p>Hello! <%= current_user.name %></p>
+          <p>User id: <%= current_user.id %></p>
           <li><%= link_to "About", pages_about_path %></li>
           <li><%= link_to "Contact", pages_contact_path %></li>
           <% end %>
