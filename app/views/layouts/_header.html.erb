@@ -13,23 +13,23 @@
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-          <p>Hello! <%= current_user.name %></p>
-          <p>User id: <%= current_user.id %></p>
+        <ul class="nav navbar-nav relative">
           <li><%= link_to "About", pages_about_path %></li>
           <li><%= link_to "Contact", pages_contact_path %></li>
-          <% end %>
           <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-            <li><%= link_to "My Listings", seller_path %></li>
-            <li><%= link_to "Sales History", sales_path %></li>
-            <li><%= link_to "Purchases History", purchases_path %></li>
-
+          <li class="dropdown"><span><i class="fa fa-user"></i><%= current_user.name %></span>
+              <ul>
+                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li><%= link_to "My Listings", seller_path %></li>
+                <li><%= link_to "Sales History", sales_path %></li>
+                <li><%= link_to "Purchases History", purchases_path %></li>
+                <li class="red"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </li>
+          <li><%= link_to 'New Listing +', new_listing_path, class: "new-listing", data: {no_turbolink: true} %></li>
           <% else %>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Log In", new_user_session_path %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
