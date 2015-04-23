@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.0'
 
 #bootstrap-sass gem
 gem 'bootstrap-sass', '~> 3.3.4'
+
+#font awesome
+gem 'font-awesome-sass'
 # paperclip
 gem "paperclip", "~> 4.2"
 # bundle exec rake doc:rails generates the API under doc/api.
