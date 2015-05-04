@@ -1,7 +1,10 @@
+<div class="row banner home-banner">
+  <h1>An easy way to rent sports equipment</h1>
+</div>
 <h2>Available Equipments</h2>
 <div class="row">
   <% @listings.each do |listing| %>
-    <div class="col-md-3">
+    <div class="col-md-3 home-listing">
       <div class="thumbnail">
       <%= link_to listing do %>
         <div class="equipment-img" style="background-image: url(<%= listing.image.url %>)"></div>
@@ -10,7 +13,7 @@
           <h3><%= listing.name %></h3> 
           <p><i class="fa fa-tag"></i><%= listing.season %></p>
           <p><i class="fa fa-money"></i><%= number_to_currency(listing.price) %> per day</p> 
-          <p><i class="fa fa-user"></i><%="Sold by: #{listing.user.name}" %></p> 
+          <p><i class="fa fa-user"></i><%="Rented by: #{listing.user.name}" %></p> 
           <p class="absolute overlay-desc"><%= listing.description %></p>
         </div>
       </div>

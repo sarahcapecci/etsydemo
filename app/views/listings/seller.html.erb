@@ -1,4 +1,4 @@
-<h1>My Listings</h1>
+<h2>My Listings</h2>
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-3">
@@ -6,18 +6,15 @@
       <%= link_to image_tag(listing.image.url), listing %>
         <div class="caption">
           <h3><%= listing.name %></h3> 
-          <p><%= listing.season %></p>
-          <p><%= number_to_currency(listing.price) %></p> 
-          <p><%="Sold by: #{listing.user.name}" %></p> 
+          <p><i class="fa fa-tag"></i><%= listing.season %></p>
+          <p><i class="fa fa-money"></i><%= number_to_currency(listing.price) %></p> 
+          <p><i class="fa fa-user"></i><%="Sold by: #{listing.user.name}" %></p> 
           <% if (user_signed_in?) && (current_user == listing.user) %>
             <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
-            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link", data: {no_turbolink: true} %>
-<% end %>

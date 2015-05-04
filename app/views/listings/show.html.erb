@@ -17,10 +17,9 @@
 				<%= link_to 'Rent it', new_listing_order_path(@listing), class: "btn", data: {no_turbolink: true} %>
 			</div>
 			<% if current_user == @listing.user %>
-				<%= link_to 'Edit', edit_listing_path(@listing), class: "block btn btn-link", data: {no_turbolink: true} %>
+				<%= link_to 'Edit', edit_listing_path(@listing), class: "block btn-link", data: {no_turbolink: true} %>
 			<% end %>
 		</div>
-	</div>
-	
+	</div>	
 	<%= link_to 'Back to all listings', listings_path, class: "btn btn-link" %>
 </div>
