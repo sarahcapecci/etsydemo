@@ -2,8 +2,8 @@
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-3">
-      <div class="thumbnail">
-      <%= link_to image_tag(listing.image.url), listing %>
+      <div class="thumbnail home-listing">
+      <div class="equipment-img" style="background-image: url(<%= listing.image.url %>)"></div>
         <div class="caption">
           <h3><%= listing.name %></h3> 
           <p><i class="fa fa-tag"></i><%= listing.season %></p>
