@@ -46,6 +46,12 @@ gem 'devise'
 
 gem 'stripe'
 
+#Mail form
+gem 'mail_form'
+
+#simple form
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

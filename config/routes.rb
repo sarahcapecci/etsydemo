@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]
   end
 
+  # match '/contacts',     to: 'contacts#new',             via: 'get'
+  # resources "contacts", only: [:new, :create]
+  
   get 'pages/about'
 
   get 'pages/contact'
