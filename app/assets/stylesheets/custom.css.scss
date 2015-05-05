@@ -64,6 +64,7 @@ footer {
 	display: inline-block;
 	float: none;
 	width: 24%;
+	vertical-align: top;
 }
 
 .banner {
@@ -79,7 +80,7 @@ footer {
 }
 
 .home-banner {
-	background-image: url('kitesurf.jpg');
+	background-image: url('https://dl.dropboxusercontent.com/s/pkaoz6q74f3pk08/kitesurf.jpg?dl=0');
 	height: 450px;
 	background-position: 10px 10px;
 
@@ -92,7 +93,7 @@ footer {
 }
 
 .about-banner {
-	background-image: url('wakeboarding.jpg');
+	background-image: url('https://dl.dropboxusercontent.com/s/z6u9u6lysfdp5p2/wakeboarding.jpg?dl=0');
 	height: 400px;
 	background-position: 40px 0;
 
@@ -104,7 +105,7 @@ footer {
 }
 
 .contact-banner {
-	background-image: url('longboard.jpg');
+	background-image: url('https://dl.dropboxusercontent.com/s/sw1y0vecmeaxamb/longboarding.jpg?dl=0');
 	height: 400px;
 	background-position: bottom;
 
